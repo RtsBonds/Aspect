@@ -1,0 +1,48 @@
+<resources>
+
+    <declare-styleable name="CropImageView">
+        <attr name="guidelines">
+            <enum name="off" value="0" />
+            <enum name="onTouch" value="1" />
+            <enum name="on" value="2" />
+        </attr>
+        <attr name="scaleType">
+            <enum name="fitCenter" value="0" />
+            <enum name="center" value="1" />
+            <enum name="centerCrop" value="2" />
+            <enum name="centerInside" value="3" />
+        </attr>
+        <attr name="shape">
+            <enum name="rectangle" value="0" />
+            <enum name="oval" value="1" />
+        </attr>
+        <attr name="AutoZoomEnabled" format="boolean" />
+        <attr name="MaxZoom" format="integer" />
+        <attr name="MultiTouchEnabled" format="boolean" />
+        <attr name="FixAspectRatio" format="boolean" />
+        <attr name="AspectRatioX" format="integer" />
+        <attr name="AspectRatioY" format="integer" />
+        <attr name="paddingRatio" format="float" />
+        <attr name="borderLineThickness" format="dimension" />
+        <attr name="borderLineColor" format="color" />
+        <attr name="borderCornerThickness" format="dimension" />
+        <attr name="borderCornerOffset" format="dimension" />
+        <attr name="borderCornerLength" format="dimension" />
+        <attr name="borderCornerColor" format="color" />
+        <attr name="guidelinesThickness" format="dimension" />
+        <attr name="guidelinesColor" format="color" />
+        <attr name="backgroundColor" format="color" />
+        <attr name="snapRadius" format="dimension" />
+        <attr name="touchRadius" format="dimension" />
+        <attr name="saveBitmap" format="boolean" />
+        <attr name="cropOverlay" format="boolean" />
+        <attr name="ShowProgressBar" format="boolean" />
+        <attr name="minCropWindowWidth" format="dimension" />
+        <attr name="minCropWindowHeight" format="dimension" />
+        <attr name="minCropResultWidthPX" format="float" />
+        <attr name="minCropResultHeightPX" format="float" />
+        <attr name="maxCropResultWidthPX" format="float" />
+        <attr name="maxCropResultHeightPX" format="float" />
+    </declare-styleable>
+
+</resources>
