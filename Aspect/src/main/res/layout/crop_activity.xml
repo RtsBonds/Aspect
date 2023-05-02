@@ -19,7 +19,6 @@
             tools:ignore="ContentDescription" />
     </androidx.appcompat.widget.Toolbar>
 
-
     <com.android.aspect.ImageViewCrop
         android:id="@+id/cropImageView"
         android:layout_width="match_parent"
