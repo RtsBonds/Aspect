@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'com.aspect'
-version = '4.1'
+version = '1.0'
 
 android {
     namespace 'com.android.aspect'
@@ -45,7 +45,7 @@ afterEvaluate {
                 from components.release
                 groupId "com.aspect"
                 artifactId "image-ratio"
-                version "4.1"
+                version "1.0"
             }
         }
     }

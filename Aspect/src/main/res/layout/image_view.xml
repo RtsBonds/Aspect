@@ -5,12 +5,16 @@
         android:id="@+id/ImageView_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="45dp"
         android:adjustViewBounds="true"
         android:scaleType="centerInside"
         tools:ignore="contentDescription" />
+
     <com.android.aspect.OverlayView
         android:id="@+id/CropOverlayView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="45dp"
         android:visibility="invisible" />
+
 </merge>
