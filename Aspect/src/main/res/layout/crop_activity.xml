@@ -1,29 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F8F8F8"
     android:orientation="vertical">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/ii"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:paddingHorizontal="15dp">
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="1dp"
+        app:strokeColor="@color/white">
 
-        <ImageView
-            android:id="@+id/close"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/clear"
-            tools:ignore="ContentDescription" />
-    </androidx.appcompat.widget.Toolbar>
+            android:layout_gravity="center_vertical"
+            android:paddingHorizontal="15dp">
 
-    <com.android.aspect.ImageViewCrop
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/close"
+                app:backgroundTint="@color/white"
+                android:layout_width="45dp"
+                app:iconTint="@color/black"
+                app:cornerRadius="0dp"
+                android:layout_height="35dp"
+                app:icon="@drawable/clear"
+                app:iconGravity="textEnd"
+                app:iconPadding="0dp"
+                app:iconSize="24dp"
+                android:layout_centerVertical="true"
+                app:rippleColor="#FF5722"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="55dp"
+                android:text="Crop Image"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/next"
+                app:backgroundTint="@color/white"
+                android:layout_width="45dp"
+                app:cornerRadius="0dp"
+                app:iconTint="@color/black"
+                android:layout_alignParentEnd="true"
+                android:layout_height="35dp"
+                app:icon="@drawable/done"
+                app:iconGravity="textEnd"
+                app:iconPadding="0dp"
+                app:iconSize="24dp"
+                android:layout_centerVertical="true"
+                app:rippleColor="#4CAF50"/>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.tanishq.ascrop.three.ImageViewCrop
         android:id="@+id/cropImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#F8F8F8"
         tools:ignore="MissingClass" />
-
 </LinearLayout>
-
