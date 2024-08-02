@@ -1,21 +1,15 @@
 package com.android.aspect;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ImageView;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
+import com.android.aspect.ImageCrop;
+import com.android.aspect.ImageViewCrop;
 import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
 
 public class CropActivity extends AppCompatActivity
         implements ImageViewCrop.OnSetImageUriCompleteListener,
@@ -23,24 +17,18 @@ public class CropActivity extends AppCompatActivity
     private ImageViewCrop viewCrop;
     private Uri uri;
     private CropOptions options;
-    Toolbar toolbar;
-    ImageView close;
 
     @Override
-    @SuppressLint({"NewApi"})
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.crop_activity);
 
-        close = findViewById(R.id.close);
-        toolbar = findViewById(R.id.toolbar);
-
-        close.setOnClickListener(v -> setResultCancel());
-        setSupportActionBar(toolbar);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
+        findViewById(R.id.close).setOnClickListener(v -> setResultCancel());
+        findViewById(R.id.next).setOnClickListener(view -> cropImage());
 
         viewCrop = findViewById(R.id.cropImageView);
         Bundle bundle = getIntent().getBundleExtra(ImageCrop.BUNDLE);
+        assert bundle != null;
         uri = bundle.getParcelable(ImageCrop.SOURCE);
         options = bundle.getParcelable(ImageCrop.OPTIONS);
         if (savedInstanceState == null) {
@@ -50,6 +38,7 @@ public class CropActivity extends AppCompatActivity
                 viewCrop.setImageUriAsync(uri);
             }
         }
+
     }
 
     @Override
@@ -67,28 +56,12 @@ public class CropActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_item, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.done) {
-            cropImage();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
     public void onBackPressed() {
         super.onBackPressed();
         setResultCancel();
     }
 
     @Override
-    @SuppressLint("NewApi")
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == ImageCrop.REQUEST_CODE) {
