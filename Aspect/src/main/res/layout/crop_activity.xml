@@ -63,7 +63,7 @@
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
 
-    <com.tanishq.ascrop.three.ImageViewCrop
+    <com.tanishq.ascrop.ImageViewCrop
         android:id="@+id/cropImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
